@@ -7,8 +7,9 @@ app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 def add_event():
     if request.method == 'POST':
-        print(request.form.get('help', None) is not None)
-        print(request.form)
+        file = request.files['photo']
+        file.save('uploads/' + 'test.png')
+        print(request.form, request.files)
     return render_template('create_event.html')
 
 # @app.route('/posts', methods=['GET', 'POST'])

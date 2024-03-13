@@ -14,14 +14,14 @@
             if (x == 0) document.getElementById("offline-code").style.display = "block", document.getElementById("online-code").style.display = "none", document.getElementById("check-online").checked = false;
             else document.getElementById("offline-code").style.display = "none", document.getElementById("online-code").style.display = "block", document.getElementById("check-offline").checked = false;
             return;
-        }    
+        }
     </script>
 </head>
 
 <body>
     <section class="container">
         <header>Додавання події</header>
-        <form action="/" class="form" method="post">
+        <form action="/" class="form" method="post" enctype="multipart/form-data">
             <div class="input-box">
                 <label>Назва події</label>
                 <input type="text" placeholder="Введіть назву" required name="name"/>
@@ -192,6 +192,7 @@
         const img = document.querySelector("img");
         let regExp = /[0-9a-zA-Z\^\&\'\@\{\}\[\]\,\$\=\!\-\#\(\)\.\%\+\~\_ ]+$/;
         function defaultBtnActive() {
+            event.preventDefault();
             defaultBtn.click();
         }
         defaultBtn.addEventListener("change", function () {
